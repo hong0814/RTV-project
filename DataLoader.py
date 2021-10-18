@@ -83,8 +83,8 @@ class DataLoader(object):
                 assert text_len == len(field)
                 assert pos_len == len(field)
                 assert rpos_len == pos_len
-                gold = summary + [2] + [0] * (max_summary_len - summary_len)
-                summary = summary + [0] * (max_summary_len - summary_len)
+                gold = list(summary) + [2] + [0] * (max_summary_len - summary_len)
+                summary = list(summary) + [0] * (max_summary_len - summary_len)
                 text = list(text) + [0] * (max_text_len - text_len)
                 field = list(field) + [0] * (max_text_len - text_len)
                 pos = list(pos) + [0] * (max_text_len - text_len)
